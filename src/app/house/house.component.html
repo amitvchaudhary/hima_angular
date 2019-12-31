@@ -1,0 +1,67 @@
+<u><h2>Add Car deatils</h2></u>
+<div>
+    <label>Company:
+      <input [(ngModel)]="car.company" placeholder="Company"/>
+    </label>
+  </div>
+  <br>
+
+  <div>
+    <label>Model:
+      <input [(ngModel)]="car.model" placeholder="Model"/>
+    </label>
+  </div>
+ <br>
+
+  <div>
+    <label>Seater:
+      <input [(ngModel)]="car.seater" placeholder="Seater"/>
+    </label>
+  </div>
+ <br>
+  <div>
+    <label>Color:
+      <input [(ngModel)]="car.color" placeholder="Color"/>
+    </label>
+  </div>
+ <br>
+  <div>
+    <label>Type:
+      <input [(ngModel)]="car.type" placeholder="Type"/>
+    </label>
+  </div>
+ <br>
+
+
+  <button (click)= "addCar()" class="button">Add Car</button>
+<br><br>
+   <button (click)= "showCar()" class="button">Show Car</button>
+   <div *ngIf="isCarVisisble">
+   <u><h2>Car details</h2></u><br>
+   <button (click)= "moveFromFrist()" class="button">Move</button><br>
+   <div *ngFor= "let car of carList; let i= index;" >
+  
+    <b>{{i+1}}</b>
+    <b>Company</b>: <span>{{car.company}}</span>&nbsp;&nbsp;
+    <b>Model</b>: <span>{{car.model}}</span>&nbsp;&nbsp;
+    <b>Seater</b>: <span>{{car.seater}}</span>&nbsp;&nbsp;
+    <b>Color</b>: <span  [ngStyle]="{'color': car.color}">{{car.color}}</span>&nbsp;&nbsp;
+    <b>Model</b>: <span>{{car.type}}</span>&nbsp;&nbsp;
+    <button (click)= "moveToProduction(i)" class="button">Move To Production</button>
+</div>
+</div>
+
+<div >
+   <u><h2>Prdouction details</h2></u><br>
+   <!-- <button (click)= "" class="button">Move</button><br> -->
+   <div *ngFor= "let prdouctionCar of productionList; let i= index;" >
+  
+    <b>{{i+1}}</b>
+    <b>Company</b>: <span>{{prdouctionCar.company}}</span>&nbsp;&nbsp;
+    <b>Model</b>: <span>{{prdouctionCar.model}}</span>&nbsp;&nbsp;
+    <b>Seater</b>: <span>{{prdouctionCar.seater}}</span>&nbsp;&nbsp;
+    <b>Color</b>: <span  [ngStyle]="{'color': car.color}">{{prdouctionCar.color}}</span>&nbsp;&nbsp;
+    <b>Model</b>: <span>{{prdouctionCar.type}}</span>&nbsp;&nbsp;
+    <button (click)= "moveToCarList(i)" class="button">Move To Car Details</button>
+</div>
+</div>
